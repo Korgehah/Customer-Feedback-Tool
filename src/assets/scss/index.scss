@@ -1,0 +1,39 @@
+/* variables */
+@import '/src/assets/scss/core/variables';
+/* fonts */
+@import '/src/assets/scss/core/fonts';
+/* components */
+@import '/src/assets/scss/components/index';
+
+body {
+  font-family: $font-stack;
+  margin: 0;
+}
+
+.wrapper {
+  width: 1224px;
+  margin: 0 auto;
+}
+
+.header {
+  &__wrapper {
+    display: flex;
+    min-height: 62px;
+    align-items: center;
+  }
+
+  &__button {
+    width: 127px;
+    height: 27px;
+    font-size: 15px;
+    line-height: 19px;
+    color: $color-button-main;
+    background-color: $color-button-secondary;
+
+    &-wrapper {
+      text-decoration: none;
+      display: flex;
+      margin-left: auto;
+    }
+  }
+}
