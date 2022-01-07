@@ -4,3 +4,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.--light {
+  color: $color-button-main;
+  background-color: $color-button-secondary;
+}
+
+.--blue {
+  color: $color-white;
+  background-color: $color-button-main;
+}

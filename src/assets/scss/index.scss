@@ -8,16 +8,22 @@
 body {
   font-family: $font-stack;
   margin: 0;
+  color: $color-text-main;
 }
 
 .wrapper {
   width: 1224px;
   margin: 0 auto;
+  display: flex;
+}
+
+.button-wrapper {
+  text-decoration: none;
+  display: flex;
 }
 
 .header {
   &__wrapper {
-    display: flex;
     min-height: 62px;
     align-items: center;
   }
@@ -27,13 +33,87 @@ body {
     height: 27px;
     font-size: 15px;
     line-height: 19px;
-    color: $color-button-main;
-    background-color: $color-button-secondary;
 
     &-wrapper {
-      text-decoration: none;
-      display: flex;
       margin-left: auto;
     }
+  }
+}
+
+.promo {
+  background: url('../images/Rectangle.png') no-repeat;
+  background-position: bottom;
+
+  &__wrapper {
+    padding: 81px 0 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__slogan {
+    max-width: 356px;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0 0 14px;
+    color: $color-text-secondary;
+  }
+
+  &__title {
+    max-width: 480px;
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 700;
+    margin: 0 0 51px;
+  }
+
+  &__subtitle {
+    max-width: 517px;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 0 40px;
+    color: $color-text-secondary;
+  }
+
+  &__slogan,
+  &__title,
+  &__subtitle {
+    text-align: center;
+  }
+
+  &__button {
+    width: 246px;
+    height: 33px;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: 700;
+
+    &-wrapper {
+      margin-bottom: 75px;
+    }
+  }
+
+  &__example {
+    display: flex;
+    width: 400px;
+    height: 603px;
+
+    &-wrapper {
+      margin: 0 0 26px;
+    }
+  }
+
+  &__partnership {
+    max-width: 581px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    margin: 0 0 7px;
+  }
+
+  &__partners {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 }
