@@ -83,8 +83,6 @@ const Promo = () => {
   return (
     <section className='promo'>
       <div className='wrapper promo__wrapper'>
-        <p className='review promo__review'>
-        <p className='promo__slogan'>
         <img
           className='promo__feedback promo__feedback_first'
           src={review_1}
@@ -164,7 +162,6 @@ const Features = ({ features }: FeatureProps) => {
           </Button>
         </a>
         <div className='features__rank-container'>
-          <img className='features__rank' src={rank} />
           <img className='features__rank' src={rank} alt='rank' />
         </div>
         <p className='review features__review'>
