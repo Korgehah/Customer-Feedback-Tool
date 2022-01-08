@@ -22,6 +22,19 @@ body {
   display: flex;
 }
 
+.ads {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.review {
+  font-size: 16px;
+  line-height: 19px;
+  color: $color-text-secondary;
+}
+
 .header {
   &__wrapper {
     min-height: 62px;
@@ -50,12 +63,9 @@ body {
     align-items: center;
   }
 
-  &__slogan {
+  &__review {
     max-width: 356px;
-    font-size: 16px;
-    line-height: 19px;
     margin: 0 0 14px;
-    color: $color-text-secondary;
   }
 
   &__title {
@@ -74,7 +84,6 @@ body {
     color: $color-text-secondary;
   }
 
-  &__slogan,
   &__title,
   &__subtitle {
     text-align: center;
@@ -102,12 +111,8 @@ body {
     }
   }
 
-  &__partnership {
+  &__ads {
     max-width: 581px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 36px;
     margin: 0 0 7px;
   }
 
@@ -115,5 +120,47 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+  }
+}
+
+.features {
+  background: $color-features-background;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  &__wrapper {
+    padding: 68px 0 70px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__ads {
+    max-width: 603px;
+    margin: 0 0 38px;
+  }
+
+  &__button {
+    width: 246px;
+    height: 33px;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 0 0 16px;
+  }
+
+  &__rank {
+    width: 80px;
+    height: 16px;
+
+    &-container {
+      display: flex;
+      margin: 0 0 32px;
+    }
+  }
+
+  &__review {
+    max-width: 361px;
+    margin: 0;
+    text-align: center;
   }
 }
