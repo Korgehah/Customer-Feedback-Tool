@@ -4,6 +4,11 @@ import React from 'react';
 import './assets/scss/index.scss';
 /* images */
 import logo from './assets/images/logo.svg';
+import review_1 from './assets/images/review_1.png';
+import review_2 from './assets/images/review_2.png';
+import review_3 from './assets/images/review_3.png';
+import review_4 from './assets/images/review_4.png';
+import comment from './assets/images/comment.svg';
 import example from './assets/images/example.png';
 import squarespace from './assets/images/squarespace.svg';
 import ozan from './assets/images/ozan.svg';
@@ -15,6 +20,7 @@ import feature_2 from './assets/images/feature_2.png';
 import feature_3 from './assets/images/feature_3.png';
 import feature_4 from './assets/images/feature_4.png';
 import rank from './assets/images/rank.svg';
+import management from './assets/images/management.png';
 /* components */
 import Button from './components/Button';
 import Navigation from './components/Navigation';
@@ -78,6 +84,29 @@ const Promo = () => {
     <section className='promo'>
       <div className='wrapper promo__wrapper'>
         <p className='review promo__review'>
+        <p className='promo__slogan'>
+        <img
+          className='promo__feedback promo__feedback_first'
+          src={review_1}
+          alt='review'
+        />
+        <img
+          className='promo__feedback promo__feedback_second'
+          src={review_2}
+          alt='review'
+        />
+        <img
+          className='promo__feedback promo__feedback_third'
+          src={review_3}
+          alt='review'
+        />
+        <img
+          className='promo__feedback promo__feedback_fourth'
+          src={review_4}
+          alt='review'
+        />
+        <img className='promo__comment' src={comment} alt='comment' />
+        <p className='review promo__review'>
           “A winning and indispensible combination for the elimination of errors
           from your code.”
         </p>
@@ -136,6 +165,7 @@ const Features = ({ features }: FeatureProps) => {
         </a>
         <div className='features__rank-container'>
           <img className='features__rank' src={rank} />
+          <img className='features__rank' src={rank} alt='rank' />
         </div>
         <p className='review features__review'>
           “Gleap has delivered more than expected! It was implemented within
@@ -146,6 +176,29 @@ const Features = ({ features }: FeatureProps) => {
   );
 };
 
+const Management = () => {
+  return (
+    <section className='management'>
+      <div className='wrapper management__wrapper'>
+        <h2 className='management__title'>
+          Manage, track and assign all in one place
+        </h2>
+        <div className='management__image-container'>
+          <img
+            className='management__image'
+            src={management}
+            alt='management'
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Benefits = () => {
+  return <section className='benefits'></section>;
+};
+
 function App() {
   return (
     <div className='App'>
@@ -153,6 +206,8 @@ function App() {
       <main className='main'>
         <Promo />
         <Features features={data.features} />
+        <Features features={data.features} />
+        <Management />
       </main>
     </div>
   );
