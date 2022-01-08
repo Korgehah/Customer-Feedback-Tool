@@ -27,12 +27,16 @@ import benefits_3 from './assets/images/benefits_3.svg';
 import benefits_4 from './assets/images/benefits_4.svg';
 import benefit_image_1 from './assets/images/benefit_image_1.png';
 import benefit_image_2 from './assets/images/benefit_image_2.png';
+import company1 from './assets/images/company1.png';
+import company2 from './assets/images/company2.png';
+import company3 from './assets/images/company3.png';
 /* components */
 import Button from './components/Button';
 import Navigation from './components/Navigation';
 import FeatureItems from './components/FeatureItems';
 import BenefitsCards from './components/BenefitsCards';
 import PricingCards from './components/PricingCards';
+import CooperationCards from './components/CooperationCards';
 
 const data = {
   headerNav: [
@@ -113,6 +117,29 @@ const data = {
       dataRetention: '6 months',
     },
     { title: 'Pro', price: '$199', projects: '8', dataRetention: '12 months' },
+  ],
+  cooperationCards: [
+    {
+      logo: company1,
+      review:
+        '“Gleap is the perfect tool for agencies to collect and manage feedback and issues. It makes projects go smoothly and clients love the shaking gesture to report bugs.”',
+      author: 'Théo Hudry',
+      company: 'CEO, Minuit Agency',
+    },
+    {
+      logo: company2,
+      review:
+        '“Gleap team’s super-fast turnaround time on delivering new feature requests, creates a winning and indispensable combination for the elimination of errors from your code.”',
+      author: 'Martin Hardman',
+      company: 'Transaction Network Services',
+    },
+    {
+      logo: company3,
+      review:
+        '“Gleap was implemented within minutes and it is now an essential part of our development process.”',
+      author: 'Mark Breuß',
+      company: 'Founder, MARK.ONE',
+    },
   ],
 };
 
@@ -280,6 +307,63 @@ const Pricing = ({ pricing }: PricingProps) => {
       <div className='wrapper pricing__wrapper'>
         <div className='pricing__title'>Pricing</div>
         <PricingCards pricing={pricing} />
+        <div className='ads pricing__ads'>Need a little... extra?</div>
+        <div className='review pricing__review'>
+          Sometimes we all need a little extra. Our sales team will be happy to
+          setup a custom plan tailored to your needs.
+        </div>
+        <a className='button-wrapper pricing__button-wrapper' href='zaglushka'>
+          <Button className='pricing__button' buttonVariant='--light'>
+            Contact us
+          </Button>
+        </a>
+      </div>
+    </section>
+  );
+};
+
+interface CooperationProps {
+  cooperationCards: {
+    logo: string;
+    review: string;
+    author: string;
+    company: string;
+  }[];
+}
+
+const Cooperation = ({ cooperationCards }: CooperationProps) => {
+  return (
+    <section className='cooperation'>
+      <div className='wrapper cooperation__wrapper'>
+        <h2 className='cooperation__title'>
+          Over 200 teams rely on Gleap every day
+        </h2>
+        <CooperationCards cooperationCards={cooperationCards} />
+      </div>
+    </section>
+  );
+};
+
+const Integration = () => {
+  return (
+    <section className='integration'>
+      <div className='wrapper integration__wrapper'>
+        <div className='ads integration__ads'>
+          Integrate Gleap with all your favourite tools
+        </div>
+        <div className='review integration__review'>
+          We don’t get in the way of tools you love, we integrate with them to
+          help you become better. Ship your reports to your project management
+          tool of choice in real time.
+        </div>
+        <a
+          className='button-wrapper integration__button-wrapper'
+          href='zaglushka'
+        >
+          <Button className='integration__button' buttonVariant='--light'>
+            See all integrations
+          </Button>
+        </a>
       </div>
     </section>
   );
@@ -295,6 +379,8 @@ function App() {
         <Management />
         <Benefits benefitsCards={data.benefitsCards} benefits={data.benefits} />
         <Pricing pricing={data.pricing} />
+        <Cooperation cooperationCards={data.cooperationCards} />
+        <Integration />
       </main>
     </div>
   );
