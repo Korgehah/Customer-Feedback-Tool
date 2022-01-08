@@ -8,6 +8,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      &_colored {
+        background: linear-gradient(to bottom, #97f1d6, #ebab89);
+      }
     }
   }
 

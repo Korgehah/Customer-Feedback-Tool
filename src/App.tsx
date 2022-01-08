@@ -21,10 +21,18 @@ import feature_3 from './assets/images/feature_3.png';
 import feature_4 from './assets/images/feature_4.png';
 import rank from './assets/images/rank.svg';
 import management from './assets/images/management.png';
+import benefits_1 from './assets/images/benefits_1.svg';
+import benefits_2 from './assets/images/benefits_2.svg';
+import benefits_3 from './assets/images/benefits_3.svg';
+import benefits_4 from './assets/images/benefits_4.svg';
+import benefit_image_1 from './assets/images/benefit_image_1.png';
+import benefit_image_2 from './assets/images/benefit_image_2.png';
 /* components */
 import Button from './components/Button';
 import Navigation from './components/Navigation';
 import FeatureItems from './components/FeatureItems';
+import BenefitsCards from './components/BenefitsCards';
+import PricingCards from './components/PricingCards';
 
 const data = {
   headerNav: [
@@ -56,6 +64,55 @@ const data = {
       subtitle: 'Build trust and relationships with your users.',
       src: feature_4,
     },
+  ],
+  benefits: [
+    {
+      title: 'See how users rate their journey with you.',
+      subtitle: 'Where are your users at their happiest?',
+      src: benefit_image_1,
+    },
+    {
+      title: 'Discover the features your users really want.',
+      subtitle: 'You will be surprised what ideas they come up with.',
+      src: benefit_image_2,
+    },
+  ],
+  benefitsCards: [
+    {
+      title: 'Capture feedback visually',
+      description:
+        'If screenshots and video replays were not enough, users can draw and select exactly where the bug is.',
+      src: benefits_1,
+    },
+    {
+      title: 'Seamless integration',
+      description:
+        'Fully automate your workflow by integrating Gleap with all your favourite platforms including Zapier.',
+      src: benefits_2,
+    },
+    {
+      title: 'Heard users are happy users',
+      description:
+        'Let your users know they are appreciated when they are the first to notice things aren’t quite right.',
+      src: benefits_3,
+    },
+    {
+      title: 'Save time and money',
+      description:
+        'Increase your productivity by 40% with detailed bug reports. Gone are the days of trading emails with your users.',
+      src: benefits_4,
+    },
+  ],
+  pricing: [
+    { title: 'Free', price: '$0', projects: '1', dataRetention: '3 days' },
+    { title: 'Basic', price: '$29', projects: '2', dataRetention: '1 month' },
+    {
+      title: 'Startup',
+      price: '$89',
+      projects: '4',
+      dataRetention: '6 months',
+    },
+    { title: 'Pro', price: '$199', projects: '8', dataRetention: '12 months' },
   ],
 };
 
@@ -192,8 +249,40 @@ const Management = () => {
   );
 };
 
-const Benefits = () => {
-  return <section className='benefits'></section>;
+interface BenefitsProps {
+  benefits: { title: string; subtitle: string; src?: string }[];
+  benefitsCards: { title: string; description: string; src?: string }[];
+}
+
+const Benefits = ({ benefitsCards, benefits }: BenefitsProps) => {
+  return (
+    <section className='benefits'>
+      <div className='wrapper benefits__wrapper'>
+        <BenefitsCards benefitsCards={benefitsCards} />
+        <FeatureItems features={benefits} background />
+      </div>
+    </section>
+  );
+};
+
+interface PricingProps {
+  pricing: {
+    title: string;
+    price: string;
+    projects: string;
+    dataRetention: string;
+  }[];
+}
+
+const Pricing = ({ pricing }: PricingProps) => {
+  return (
+    <section className='pricing'>
+      <div className='wrapper pricing__wrapper'>
+        <div className='pricing__title'>Pricing</div>
+        <PricingCards pricing={pricing} />
+      </div>
+    </section>
+  );
 };
 
 function App() {
@@ -203,8 +292,9 @@ function App() {
       <main className='main'>
         <Promo />
         <Features features={data.features} />
-        <Features features={data.features} />
         <Management />
+        <Benefits benefitsCards={data.benefitsCards} benefits={data.benefits} />
+        <Pricing pricing={data.pricing} />
       </main>
     </div>
   );
