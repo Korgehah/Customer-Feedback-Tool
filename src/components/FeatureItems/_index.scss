@@ -20,7 +20,6 @@
     grid-template-columns: repeat(2, 49%);
     column-gap: 2%;
     row-gap: 40px;
-    margin: 0 0 60px;
   }
 
   &__description {
@@ -38,6 +37,8 @@
     width: 100%;
 
     &-container {
+      width: 600px;
+      height: 100%;
       display: flex;
     }
   }

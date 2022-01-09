@@ -1,0 +1,42 @@
+.cooperation {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    column-gap: 2%;
+  }
+
+  &__card {
+    background-color: $color-white;
+    border-radius: 24px;
+
+    &-wrapper {
+      padding: 30px 16px 16px;
+    }
+  }
+
+  &__logo {
+    &-wrapper {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      margin: 0 0 20px;
+    }
+  }
+
+  &__review {
+    margin: 0 0 29px;
+  }
+
+  &__author {
+    font-weight: 700;
+  }
+
+  &__author,
+  &__company {
+    display: block;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color-text-secondary;
+    margin: 0;
+  }
+}
