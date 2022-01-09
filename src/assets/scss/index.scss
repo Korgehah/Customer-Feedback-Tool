@@ -297,7 +297,7 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   background: url('../images/integration__bg.png') no-repeat;
-  background-size: contain;
+  background-size: cover;
 
   &__wrapper {
     flex-direction: column;
@@ -326,5 +326,47 @@ body {
     font-size: 16px;
     line-height: 19px;
     font-weight: 700;
+  }
+}
+
+.footer {
+  position: relative;
+
+  &__wrapper {
+    padding: 30px 0 70px;
+    box-sizing: border-box;
+  }
+
+  &__navigation {
+    margin-left: auto;
+  }
+
+  &__logo {
+    filter: grayscale(1);
+  }
+
+  &__info {
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &__copyright {
+    margin: 0 15px 0 0;
+    color: $color-text-secondary;
+  }
+
+  &__documents {
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      margin: 0;
+      padding: 0 6px;
+      text-decoration: none;
+      color: $color-text-main;
+    }
   }
 }

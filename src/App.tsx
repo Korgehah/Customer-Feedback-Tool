@@ -141,6 +141,13 @@ const data = {
       company: 'Founder, MARK.ONE',
     },
   ],
+  footerNav: [
+    { name: 'Documentation', href: '' },
+    { name: 'Integrations', href: '' },
+    { name: 'About us', href: '' },
+    { name: 'Blog', href: '' },
+    { name: 'Contacts', href: '' },
+  ],
 };
 
 interface HeaderProps {
@@ -369,6 +376,37 @@ const Integration = () => {
   );
 };
 
+interface FooterProps {
+  footerNav: { name: string; href: string }[];
+}
+
+const Footer = ({ footerNav }: FooterProps) => {
+  return (
+    <footer className='footer'>
+      <div className='wrapper footer__wrapper'>
+        <img className='footer__logo' src={logo} alt='logo' />
+        <Navigation navItems={footerNav} className='footer__navigation' />
+        <div className='footer__info'>
+          <p className='footer__copyright'>
+            © 2021 Gleap. All rights reserved.
+          </p>
+          <ul className='footer__documents'>
+            <a className='footer__documents-item' href='zaglushka'>
+              Privacy Policy
+            </a>
+            <a className='footer__documents-item' href='zaglushka'>
+              Terms of Service
+            </a>
+            <a className='footer__documents-item' href='zaglushka'>
+              Site Notice
+            </a>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
 function App() {
   return (
     <div className='App'>
@@ -382,6 +420,7 @@ function App() {
         <Cooperation cooperationCards={data.cooperationCards} />
         <Integration />
       </main>
+      <Footer footerNav={data.footerNav} />
     </div>
   );
 }
