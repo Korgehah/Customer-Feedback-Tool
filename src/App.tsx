@@ -216,19 +216,32 @@ const Promo = () => {
         </div>
         <p className='ads promo__ads'>Over 200 teams worldwide rely on Gleap</p>
         <div className='promo__partners'>
-          <img
-            className='promo__partners-item'
-            src={squarespace}
-            alt='squarespace'
-          />
-          <img className='promo__partners-item' src={ozan} alt='ozan' />
-          <img className='promo__partners-item' src={padoq} alt='padoq' />
-          <img
-            className='promo__partners-item'
-            src={stockstotrade}
-            alt='stockstotrade'
-          />
-          <img className='promo__partners-item' src={blank} alt='blank' />
+          <a
+            className='promo__partners-link'
+            href='https://www.squarespace.com/'
+          >
+            <img
+              className='promo__partners-item'
+              src={squarespace}
+              alt='squarespace'
+            />
+          </a>
+          <a className='promo__partners-link' href='https://www.ozan.com'>
+            <img className='promo__partners-item' src={ozan} alt='ozan' />
+          </a>
+          <a className='promo__partners-link' href='https://padoq.com/'>
+            <img className='promo__partners-item' src={padoq} alt='padoq' />
+          </a>
+          <a className='promo__partners-link' href='https://stockstotrade.com/'>
+            <img
+              className='promo__partners-item'
+              src={stockstotrade}
+              alt='stockstotrade'
+            />
+          </a>
+          <a className='promo__partners-link' href='https://www.blank.app/'>
+            <img className='promo__partners-item' src={blank} alt='blank' />
+          </a>
         </div>
       </div>
     </section>

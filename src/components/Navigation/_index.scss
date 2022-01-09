@@ -9,6 +9,15 @@
   &__item {
     text-decoration: none;
     color: $color-text-main;
+    display: flex;
+    align-items: center;
+    height: 62px;
     padding: 0 16px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $color-button-main;
+      color: $color-button-secondary;
+    }
   }
 }
