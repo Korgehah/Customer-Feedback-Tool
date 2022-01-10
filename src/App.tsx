@@ -160,7 +160,7 @@ const Header = ({ headerNav }: HeaderProps) => {
       <div className='wrapper header__wrapper'>
         <img className='header__logo' src={logo} alt='logo' />
         <Navigation navItems={headerNav} className='header__navigation' />
-        <a className='button-wrapper header__button-wrapper' href='zaglushka'>
+        <a className='button-wrapper header__button-wrapper' href='test'>
           <Button className='header__button' buttonVariant='--light'>
             Sign in
           </Button>
@@ -206,7 +206,7 @@ const Promo = () => {
           Communicate with your users directly and build better software by
           discovering their everyday pain points.
         </p>
-        <a className='button-wrapper promo__button-wrapper' href='zaglushka'>
+        <a className='button-wrapper promo__button-wrapper' href='test'>
           <Button className='promo__button' buttonVariant='--blue'>
             Get started for free
           </Button>
@@ -219,6 +219,8 @@ const Promo = () => {
           <a
             className='promo__partners-link'
             href='https://www.squarespace.com/'
+            target='_blank'
+            rel='noreferrer'
           >
             <img
               className='promo__partners-item'
@@ -226,20 +228,40 @@ const Promo = () => {
               alt='squarespace'
             />
           </a>
-          <a className='promo__partners-link' href='https://www.ozan.com'>
+          <a
+            className='promo__partners-link'
+            href='https://www.ozan.com'
+            target='_blank'
+            rel='noreferrer'
+          >
             <img className='promo__partners-item' src={ozan} alt='ozan' />
           </a>
-          <a className='promo__partners-link' href='https://padoq.com/'>
+          <a
+            className='promo__partners-link'
+            href='https://padoq.com/'
+            target='_blank'
+            rel='noreferrer'
+          >
             <img className='promo__partners-item' src={padoq} alt='padoq' />
           </a>
-          <a className='promo__partners-link' href='https://stockstotrade.com/'>
+          <a
+            className='promo__partners-link'
+            href='https://stockstotrade.com/'
+            target='_blank'
+            rel='noreferrer'
+          >
             <img
               className='promo__partners-item'
               src={stockstotrade}
               alt='stockstotrade'
             />
           </a>
-          <a className='promo__partners-link' href='https://www.blank.app/'>
+          <a
+            className='promo__partners-link'
+            href='https://www.blank.app/'
+            target='_blank'
+            rel='noreferrer'
+          >
             <img className='promo__partners-item' src={blank} alt='blank' />
           </a>
         </div>
@@ -260,7 +282,7 @@ const Features = ({ features }: FeatureProps) => {
         <div className='ads features__ads'>
           Integrate easily in minutes on mobile and web apps
         </div>
-        <a className='button-wrapper features__button-wrapper' href='zaglushka'>
+        <a className='button-wrapper features__button-wrapper' href='test'>
           <Button className='features__button' buttonVariant='--blue'>
             Get started for free
           </Button>
@@ -332,7 +354,7 @@ const Pricing = ({ pricing }: PricingProps) => {
           Sometimes we all need a little extra. Our sales team will be happy to
           setup a custom plan tailored to your needs.
         </div>
-        <a className='button-wrapper pricing__button-wrapper' href='zaglushka'>
+        <a className='button-wrapper pricing__button-wrapper' href='test'>
           <Button className='pricing__button' buttonVariant='--light'>
             Contact us
           </Button>
@@ -376,10 +398,7 @@ const Integration = () => {
           help you become better. Ship your reports to your project management
           tool of choice in real time.
         </div>
-        <a
-          className='button-wrapper integration__button-wrapper'
-          href='zaglushka'
-        >
+        <a className='button-wrapper integration__button-wrapper' href='test'>
           <Button className='integration__button' buttonVariant='--light'>
             See all integrations
           </Button>
@@ -404,13 +423,13 @@ const Footer = ({ footerNav }: FooterProps) => {
             © 2021 Gleap. All rights reserved.
           </p>
           <ul className='footer__documents'>
-            <a className='footer__documents-item' href='zaglushka'>
+            <a className='footer__documents-item' href='test'>
               Privacy Policy
             </a>
-            <a className='footer__documents-item' href='zaglushka'>
+            <a className='footer__documents-item' href='test'>
               Terms of Service
             </a>
-            <a className='footer__documents-item' href='zaglushka'>
+            <a className='footer__documents-item' href='test'>
               Site Notice
             </a>
           </ul>

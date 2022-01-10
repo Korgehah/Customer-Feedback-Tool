@@ -30,10 +30,7 @@ const PricingCard = ({
             {dataRetention}
           </div>
         </div>
-        <a
-          className='button-wrapper pricing__card-button-wrapper'
-          href='zaglushka'
-        >
+        <a className='button-wrapper pricing__card-button-wrapper' href='test'>
           <Button className='pricing__card-button' buttonVariant='--blue'>
             Get started
           </Button>
