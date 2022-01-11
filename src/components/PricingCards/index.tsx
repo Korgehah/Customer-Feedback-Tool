@@ -15,7 +15,7 @@ const PricingCard = ({
   dataRetention,
 }: PricingCardProps) => {
   return (
-    <div className='pricing__card'>
+    <a className='pricing__card' href='test'>
       <div className='pricing__card-wrapper'>
         <h2 className='pricing__card-title'>{title}</h2>
         <span className='pricing__price'>{price}</span>
@@ -30,13 +30,11 @@ const PricingCard = ({
             {dataRetention}
           </div>
         </div>
-        <a className='button-wrapper pricing__card-button-wrapper' href='test'>
-          <Button className='pricing__card-button' buttonVariant='--blue'>
-            Get started
-          </Button>
-        </a>
+        <Button className='pricing__card-button' buttonVariant='--blue'>
+          Get started
+        </Button>
       </div>
-    </div>
+    </a>
   );
 };
 

@@ -7,6 +7,9 @@
   }
 
   &__card {
+    text-decoration: none;
+    color: unset;
+
     &-wrapper {
       border-radius: 24px;
       border: 1px solid #dee1ea;
