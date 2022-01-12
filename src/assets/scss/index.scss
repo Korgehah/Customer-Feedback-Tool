@@ -281,16 +281,32 @@ body {
 
     &-link {
       margin: 0 0 10px;
+      padding: 0 30px;
+
+      @media (max-width: 636px) {
+        padding: 0 15px;
+      }
+
+      @media (max-width: 375px) {
+        padding: 0 10px;
+      }
+
       &:hover .promo__partners-item {
         filter: invert(100);
       }
     }
 
     &-item {
+      display: flex;
       height: 32px;
       transition: filter 0.3s ease-in-out;
 
-      @media (max-width: 1284px) {
+      @media (max-width: 828px) {
+        height: 25px;
+      }
+
+      @media (max-width: 375px) {
+        height: 20px;
       }
     }
   }
@@ -512,6 +528,10 @@ body {
       padding: 160px 0 45px;
     }
 
+    @media (max-width: 828px) {
+      padding: 160px 0 30px;
+    }
+
     @media (max-width: 636px) {
       padding: 45px 0;
     }
@@ -526,6 +546,12 @@ body {
     @media (max-width: 1052px) {
       font-size: 34px;
       line-height: 35px;
+    }
+
+    @media (max-width: 828px) {
+      font-size: 30px;
+      line-height: 34px;
+      max-width: 400px;
     }
 
     @media (max-width: 636px) {
@@ -549,6 +575,10 @@ body {
     @media (max-width: 1052px) {
       max-width: 404px;
       font-size: 16px;
+    }
+
+    @media (max-width: 828px) {
+      max-width: 300px;
     }
   }
 
