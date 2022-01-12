@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 /* scss */
 import './assets/scss/index.scss';
@@ -155,9 +155,15 @@ const data = {
 
 interface HeaderProps {
   headerNav: { name: string; href: string }[];
+  isDropdownOpen: boolean;
+  setIsDropdownOpen: Function;
 }
 
-const Header = ({ headerNav }: HeaderProps) => {
+const Header = ({
+  headerNav,
+  isDropdownOpen,
+  setIsDropdownOpen,
+}: HeaderProps) => {
   const windowWidth = useWindowWidth();
   return (
     <header className='header'>
@@ -174,9 +180,24 @@ const Header = ({ headerNav }: HeaderProps) => {
           </Button>
         </a>
         {windowWidth && windowWidth <= 636 && (
-          <div className='header__menu-wrapper'>
-            <img className='header__menu' src={burger} alt='burger-menu' />
-          </div>
+          <>
+            <div
+              className='header__menu-wrapper'
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              <img className='header__menu' src={burger} alt='burger-menu' />
+            </div>
+            <div
+              className={`header__dropdown ${isDropdownOpen ? '--open' : ''}`}
+            >
+              <div className='header__dropdown-wrapper'>
+                <Navigation
+                  navItems={headerNav}
+                  className='header__navigation'
+                />
+              </div>
+            </div>
+          </>
         )}
       </div>
     </header>
@@ -468,10 +489,15 @@ const Footer = ({ footerNav }: FooterProps) => {
   );
 };
 
-function App() {
+const App = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
   return (
     <div className='App'>
-      <Header headerNav={data.headerNav} />
+      <Header
+        headerNav={data.headerNav}
+        isDropdownOpen={isDropdownOpen}
+        setIsDropdownOpen={setIsDropdownOpen}
+      />
       <main className='main'>
         <Promo />
         <Features features={data.features} />
@@ -484,6 +510,6 @@ function App() {
       <Footer footerNav={data.footerNav} />
     </div>
   );
-}
+};
 
 export default App;

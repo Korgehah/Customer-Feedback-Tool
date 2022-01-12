@@ -25,10 +25,6 @@
       height: 50px;
     }
 
-    @media (max-width: 636px) {
-      height: 40px;
-    }
-
     &:hover {
       background-color: $color-button-main;
       color: $color-button-secondary;
