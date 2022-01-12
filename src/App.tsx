@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 /* scss */
 import './assets/scss/index.scss';
@@ -30,6 +30,7 @@ import benefit_image_2 from './assets/images/benefit_image_2.png';
 import company1 from './assets/images/company1.png';
 import company2 from './assets/images/company2.png';
 import company3 from './assets/images/company3.png';
+import burger from './assets/images/burger.svg';
 /* components */
 import Button from './components/Button';
 import Navigation from './components/Navigation';
@@ -37,6 +38,8 @@ import FeatureItems from './components/FeatureItems';
 import BenefitsCards from './components/BenefitsCards';
 import PricingCards from './components/PricingCards';
 import CooperationCards from './components/CooperationCards';
+/* hooks */
+import { useWindowWidth } from './hooks/useWindowWidth';
 
 const data = {
   headerNav: [
@@ -152,49 +155,86 @@ const data = {
 
 interface HeaderProps {
   headerNav: { name: string; href: string }[];
+  isDropdownOpen: boolean;
+  setIsDropdownOpen: Function;
 }
 
-const Header = ({ headerNav }: HeaderProps) => {
+const Header = ({
+  headerNav,
+  isDropdownOpen,
+  setIsDropdownOpen,
+}: HeaderProps) => {
+  const windowWidth = useWindowWidth();
   return (
     <header className='header'>
       <div className='wrapper header__wrapper'>
-        <img className='header__logo' src={logo} alt='logo' />
-        <Navigation navItems={headerNav} className='header__navigation' />
+        <div className='header__logo-wrapper'>
+          <img className='header__logo' src={logo} alt='logo' />
+        </div>
+        {windowWidth && windowWidth > 636 && (
+          <Navigation navItems={headerNav} className='header__navigation' />
+        )}
         <a className='button-wrapper header__button-wrapper' href='test'>
           <Button className='header__button' buttonVariant='--light'>
             Sign in
           </Button>
         </a>
+        {windowWidth && windowWidth <= 636 && (
+          <>
+            <div
+              className='header__menu-wrapper'
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              <img className='header__menu' src={burger} alt='burger-menu' />
+            </div>
+            <div
+              className={`header__dropdown ${isDropdownOpen ? '--open' : ''}`}
+            >
+              <div className='header__dropdown-wrapper'>
+                <Navigation
+                  navItems={headerNav}
+                  className='header__navigation'
+                />
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </header>
   );
 };
 
 const Promo = () => {
+  const windowWidth = useWindowWidth();
   return (
     <section className='promo'>
       <div className='wrapper promo__wrapper'>
-        <img
-          className='promo__feedback promo__feedback_first'
-          src={review_1}
-          alt='review'
-        />
-        <img
-          className='promo__feedback promo__feedback_second'
-          src={review_2}
-          alt='review'
-        />
-        <img
-          className='promo__feedback promo__feedback_third'
-          src={review_3}
-          alt='review'
-        />
-        <img
-          className='promo__feedback promo__feedback_fourth'
-          src={review_4}
-          alt='review'
-        />
-        <img className='promo__comment' src={comment} alt='comment' />
+        {windowWidth && windowWidth > 828 && (
+          <>
+            <img
+              className='promo__feedback promo__feedback_first'
+              src={review_1}
+              alt='review'
+            />
+            <img
+              className='promo__feedback promo__feedback_second'
+              src={review_2}
+              alt='review'
+            />
+            <img
+              className='promo__feedback promo__feedback_third'
+              src={review_3}
+              alt='review'
+            />
+            <img
+              className='promo__feedback promo__feedback_fourth'
+              src={review_4}
+              alt='review'
+            />
+            <img className='promo__comment' src={comment} alt='comment' />
+          </>
+        )}
+
         <p className='review promo__review'>
           “A winning and indispensible combination for the elimination of errors
           from your code.”
@@ -413,15 +453,20 @@ interface FooterProps {
 }
 
 const Footer = ({ footerNav }: FooterProps) => {
+  const windowWidth = useWindowWidth();
   return (
     <footer className='footer'>
       <div className='wrapper footer__wrapper'>
-        <img className='footer__logo' src={logo} alt='logo' />
+        {windowWidth && windowWidth > 636 && (
+          <img className='footer__logo' src={logo} alt='logo' />
+        )}
         <Navigation navItems={footerNav} className='footer__navigation' />
         <div className='footer__info'>
-          <p className='footer__copyright'>
-            © 2021 Gleap. All rights reserved.
-          </p>
+          {windowWidth && windowWidth > 636 && (
+            <p className='footer__copyright'>
+              © 2021 Gleap. All rights reserved.
+            </p>
+          )}
           <ul className='footer__documents'>
             <a className='footer__documents-item' href='test'>
               Privacy Policy
@@ -434,15 +479,25 @@ const Footer = ({ footerNav }: FooterProps) => {
             </a>
           </ul>
         </div>
+        {windowWidth && windowWidth <= 636 && (
+          <p className='footer__copyright'>
+            © 2021 Gleap. All rights reserved.
+          </p>
+        )}
       </div>
     </footer>
   );
 };
 
-function App() {
+const App = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
   return (
     <div className='App'>
-      <Header headerNav={data.headerNav} />
+      <Header
+        headerNav={data.headerNav}
+        isDropdownOpen={isDropdownOpen}
+        setIsDropdownOpen={setIsDropdownOpen}
+      />
       <main className='main'>
         <Promo />
         <Features features={data.features} />
@@ -455,6 +510,6 @@ function App() {
       <Footer footerNav={data.footerNav} />
     </div>
   );
-}
+};
 
 export default App;

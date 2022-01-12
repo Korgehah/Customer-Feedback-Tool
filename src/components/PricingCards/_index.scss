@@ -1,9 +1,21 @@
 .pricing {
   &__cards {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 16px;
+    row-gap: 16px;
     margin: 0 0 105px;
     width: 100%;
+
+    @media (max-width: 1284px) {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 0 50px;
+    }
+
+    @media (max-width: 636px) {
+      grid-template-columns: repeat(1, 1fr);
+      margin: 0 0 30px;
+    }
   }
 
   &__card {
@@ -25,6 +37,11 @@
       line-height: 42px;
       margin: 0 0 20px;
       transition: color 0.3s ease-in-out;
+
+      @media (max-width: 1052px) {
+        font-size: 30px;
+        line-height: 35px;
+      }
     }
 
     &:hover {
@@ -53,6 +70,11 @@
     color: $color-button-main;
     margin: 0 0 13px;
     transition: color 0.3s ease-in-out;
+
+    @media (max-width: 1052px) {
+      font-size: 37px;
+      line-height: 42px;
+    }
   }
 
   &__term {
@@ -70,6 +92,10 @@
     margin: 0 0 40px;
     width: 100%;
     box-sizing: border-box;
+
+    @media (max-width: 1052px) {
+      margin: 0 0 20px;
+    }
 
     &_bold {
       font-weight: 700;
@@ -90,10 +116,16 @@
   }
 
   &__card-button {
-    width: 240px;
+    width: 100%;
+    max-width: 274px;
     height: 30px;
     font-size: 16px;
     line-height: 19px;
     margin: 0;
+
+    @media (max-width: 1052px) {
+      height: 38px;
+      font-size: 18px;
+    }
   }
 }
