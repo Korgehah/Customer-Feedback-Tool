@@ -555,7 +555,8 @@ body {
   background-size: contain;
 
   @media (max-width: 636px) {
-    background: none;
+    background-size: cover;
+    background-position: top;
   }
 
   &__wrapper {
@@ -572,7 +573,7 @@ body {
     }
 
     @media (max-width: 636px) {
-      padding: 45px 0;
+      padding: 125px 0 45px;
     }
   }
 
