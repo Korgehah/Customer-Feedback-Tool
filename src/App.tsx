@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 /* scss */
 import './assets/scss/index.scss';
@@ -31,6 +31,7 @@ import company1 from './assets/images/company1.png';
 import company2 from './assets/images/company2.png';
 import company3 from './assets/images/company3.png';
 import burger from './assets/images/burger.svg';
+
 /* components */
 import Button from './components/Button';
 import Navigation from './components/Navigation';

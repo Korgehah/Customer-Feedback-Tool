@@ -16,13 +16,13 @@ const NavigationItem = ({ name, href }: NavigationItemProps) => {
 };
 
 interface NavigationProps {
-  className: string;
+  className?: string;
   navItems: { name: string; href: string }[];
 }
 
 const Navigation = ({ className, navItems }: NavigationProps) => {
   return (
-    <ul className={`navigation ${className}`}>
+    <ul className={`navigation ${className ? className : ''}`}>
       {navItems.map((navigation, index) => (
         <NavigationItem
           name={navigation.name}

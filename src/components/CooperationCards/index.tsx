@@ -41,6 +41,7 @@ const CooperationCards = ({ cooperationCards }: CooperationCardsProps) => {
     <div className='cooperation__cards'>
       {cooperationCards.map((card, index) => (
         <CooperationCard
+          key={index}
           logo={card.logo}
           review={card.review}
           author={card.author}
